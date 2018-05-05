@@ -4,7 +4,7 @@ Module contaning the functions to visualize the
 wines distribution using a subset data
 """
 
-import sys
+import sys, os
 import datetime
 
 import pandas as pd
@@ -52,7 +52,11 @@ def plot_distribution(wine):
 
     fname = f'figures/fig01_distribution-wine-scores.png'
 
-    fig.savefig(fname, bbox_inches = 'tight')
+    try:
+        fig.savefig(fname, bbox_inches = 'tight')
+    except OSError:
+        os.makedirs("figures")
+        fig.savefig(fname, bbox_inches = 'tight')
     return (fname)
 
 
