@@ -35,7 +35,6 @@ def get_country(filename, country):
     subset_country = wine[wine['country'] == country ].copy()
     subset_country.reset_index(drop=True, inplace=True)
 
-
     # Constructing the fname
     today = datetime.datetime.today().strftime('%Y-%m-%d')
     fname = f'data/processed/{today}-winemag_{country}.csv'
