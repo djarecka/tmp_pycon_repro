@@ -20,4 +20,4 @@ before_install:
 
 script:
   - pytest
-  - pytest --nbval notebooks/00_dj_explore-data.ipynb
+  - pytest --nbval src/data/00_dj_explore-data.ipynb
